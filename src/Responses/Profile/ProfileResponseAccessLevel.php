@@ -27,7 +27,6 @@ class ProfileResponseAccessLevel extends AbstractResponse
         #[MapInputName('store_original_transaction_id')]
         #[MapOutputName('store_original_transaction_id')]
         public string $storeOriginalTransactionId,
-        public ?string $offer,
         #[MapInputName('starts_at')]
         #[MapOutputName('starts_at')]
         public ?string $startsAt,
@@ -49,6 +48,7 @@ class ProfileResponseAccessLevel extends AbstractResponse
         #[MapInputName('is_in_grace_period')]
         #[MapOutputName('is_in_grace_period')]
         public bool $isInGracePeriod,
+        public ProfileResponseSubscriptionOffer|string|null $offer = null,
         #[MapInputName('cancellation_reason')]
         #[MapOutputName('cancellation_reason')]
         public ?string $cancellationReason = null,
