@@ -22,12 +22,37 @@ Laravel Adapty is a convenient wrapper for interacting with the Adapty API in La
 
 ## Usage
 
-TODO:
+Get profile
 
 ```php
 <?php
 
-TODO:
+use Gridwb\LaravelAdapty\Facades\Adapty;
+
+// Get profile by `customer_user_id`
+$customerUserId = 'abc123';
+$profile = Adapty::profile()->getProfile(customerUserId: $customerUserId);
+
+// Get profile by `profile_id`
+$profileId = 'abc123';
+$profile = Adapty::profile()->getProfile(profileId: $profileId);
+
+```
+
+Delete profile
+
+```php
+<?php
+
+use Gridwb\LaravelAdapty\Facades\Adapty;
+
+// Delete profile by `customer_user_id`
+$customerUserId = 'abc123';
+Adapty::profile()->deleteProfile(customerUserId: $customerUserId);
+
+// Delete profile by `profile_id`
+$profileId = 'abc123';
+Adapty::profile()->deleteProfile(profileId: $profileId);
 
 ```
 
