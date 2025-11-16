@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Gridwb\LaravelAdapty\Jobs;
 
 use Gridwb\LaravelAdapty\Events\AbstractEvent;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 
-class ProcessWebhook
+class ProcessWebhook implements ShouldQueue
 {
     /**
      * @see https://adapty.io/docs/webhook-event-types-and-fields#webhook-event-structure
