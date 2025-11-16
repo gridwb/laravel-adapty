@@ -2,6 +2,16 @@
 
 Laravel Adapty is a convenient wrapper for interacting with the Adapty API in Laravel applications.
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+    - [Profile Resource](#profile-resource)
+    - [Webhooks](#webhooks)
+- [Testing](#testing)
+- [Changelog](#changelog)
+- [License](#license)
+
 ## Installation
 
 1. Install the package
@@ -15,14 +25,20 @@ Laravel Adapty is a convenient wrapper for interacting with the Adapty API in La
     ```
 
 3. Add environment variables
-    ```bash
+    ```env
     ADAPTY_API_URL=https://api.adapty.io
     ADAPTY_API_KEY=your-api-key-here
+    ADAPTY_WEBHOOK_PATH=webhooks/adapty
+    ADAPTY_WEBHOOK_SECRET=your-webhook-secret-here
     ```
 
 ## Usage
 
-Get profile
+### `Profile` Resource
+
+#### `get profile`
+
+Get profile request:
 
 ```php
 <?php
@@ -30,16 +46,17 @@ Get profile
 use Gridwb\LaravelAdapty\Facades\Adapty;
 
 // Get profile by `customer_user_id`
-$customerUserId = 'abc123';
+$customerUserId = '<string>';
 $profile = Adapty::profile()->getProfile(customerUserId: $customerUserId);
 
 // Get profile by `profile_id`
-$profileId = 'abc123';
+$profileId = '<string>';
 $profile = Adapty::profile()->getProfile(profileId: $profileId);
-
 ```
 
-Delete profile
+#### `delete profile`
+
+Delete profile request:
 
 ```php
 <?php
@@ -47,12 +64,42 @@ Delete profile
 use Gridwb\LaravelAdapty\Facades\Adapty;
 
 // Delete profile by `customer_user_id`
-$customerUserId = 'abc123';
+$customerUserId = '<string>';
 Adapty::profile()->deleteProfile(customerUserId: $customerUserId);
 
 // Delete profile by `profile_id`
-$profileId = 'abc123';
+$profileId = '<string>';
 Adapty::profile()->deleteProfile(profileId: $profileId);
+```
+
+### `Webhooks`
+
+Adapty can send events to your Laravel application via webhooks. By default, all webhook requests are dispatched to the
+`Gridwb\LaravelAdapty\Jobs\ProcessWebhook::class` job, which triggers corresponding Laravel events. You can listen to
+these events like any other Laravel event:
+
+```php
+<?php
+
+use Gridwb\LaravelAdapty\Events\SubscriptionStarted;
+use Illuminate\Support\Facades\Event;
+
+Event::listen(SubscriptionStarted::class, function (SubscriptionStarted $event) {
+    $payload = $event->payload;
+    // Access data from Adapty payload
+});
+```
+
+If you need custom handling, you can define your own job and set it in the `config/adapty.php`:
+
+```php
+<?php
+
+return [
+    'webhook' => [
+        'process_webhook_job' => \Gridwb\LaravelAdapty\Jobs\ProcessWebhook::class,
+    ],
+];
 
 ```
 
