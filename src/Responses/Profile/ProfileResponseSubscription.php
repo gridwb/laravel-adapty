@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Gridwb\LaravelAdapty\Responses\Profile;
 
+use Gridwb\LaravelAdapty\Enums\Environment;
 use Gridwb\LaravelAdapty\Responses\AbstractResponse;
 use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Attributes\MapOutputName;
@@ -24,7 +25,7 @@ class ProfileResponseSubscription extends AbstractResponse
         #[MapInputName('store_original_transaction_id')]
         #[MapOutputName('store_original_transaction_id')]
         public string $storeOriginalTransactionId,
-        public string $environment,
+        public Environment $environment,
         #[MapInputName('purchased_at')]
         #[MapOutputName('purchased_at')]
         public string $purchasedAt,
@@ -43,7 +44,7 @@ class ProfileResponseSubscription extends AbstractResponse
         #[MapInputName('is_in_grace_period')]
         #[MapOutputName('is_in_grace_period')]
         public bool $isInGracePeriod,
-        public ProfileResponseSubscriptionOffer|string|null $offer = null,
+        public ?ProfileResponseSubscriptionOffer $offer = null,
         #[MapInputName('cancellation_reason')]
         #[MapOutputName('cancellation_reason')]
         public ?string $cancellationReason = null,

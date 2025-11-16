@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Gridwb\LaravelAdapty\Responses\Profile;
 
+use Gridwb\LaravelAdapty\Enums\Environment;
 use Gridwb\LaravelAdapty\Responses\AbstractResponse;
 use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Attributes\MapOutputName;
@@ -30,7 +31,7 @@ class ProfileResponseNonSubscription extends AbstractResponse
         #[MapInputName('purchased_at')]
         #[MapOutputName('purchased_at')]
         public string $purchasedAt,
-        public string $environment,
+        public Environment $environment,
         #[MapInputName('is_refund')]
         #[MapOutputName('is_refund')]
         public bool $isRefund,

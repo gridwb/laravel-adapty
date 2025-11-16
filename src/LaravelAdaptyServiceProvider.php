@@ -16,7 +16,8 @@ class LaravelAdaptyServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('laravel-adapty')
-            ->hasConfigFile();
+            ->hasConfigFile('adapty')
+            ->hasRoute('adapty');
     }
 
     public function packageRegistered(): void
