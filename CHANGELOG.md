@@ -2,8 +2,13 @@
 
 All notable changes to `laravel-adapty` will be documented in this file.
 
+## 1.1.2 - 2025-11-16
+
+- updated usage section in readme
+
 ## 1.1.1 - 2025-11-16
-- Webhook job `Gridwb\LaravelAdapty\Jobs\ProcessWebhook` now run in the queue.
+
+- Webhook job `Gridwb\LaravelAdapty\Jobs\ProcessWebhook` now run in the queue
 
 ## 1.1.0 - 2025-11-16
 
