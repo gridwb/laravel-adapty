@@ -9,8 +9,8 @@ use Gridwb\LaravelAdapty\Responses\AbstractResponse;
 class ProfileResponseSubscriptionOffer extends AbstractResponse
 {
     public function __construct(
-        public ?string $category = null,
-        public ?string $type = null,
+        public string $category,
+        public string $type,
         public ?string $id = null,
     ) {}
 }

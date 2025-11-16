@@ -48,7 +48,7 @@ class ProfileResponseAccessLevel extends AbstractResponse
         #[MapInputName('is_in_grace_period')]
         #[MapOutputName('is_in_grace_period')]
         public bool $isInGracePeriod,
-        public ProfileResponseSubscriptionOffer|string|null $offer = null,
+        public ?ProfileResponseSubscriptionOffer $offer = null,
         #[MapInputName('cancellation_reason')]
         #[MapOutputName('cancellation_reason')]
         public ?string $cancellationReason = null,
