@@ -82,7 +82,7 @@ return [
         |
         | Map Adapty webhook "event_type" values to Laravel event classes.
         | @see https://adapty.io/docs/webhook-event-types-and-fields#webhook-event-structure
-        | Each class must extend \Gridwb\LaravelAdapty\Events\AbstractEvent.
+        | Each class must extend Gridwb\LaravelAdapty\Events\AbstractEvent.
         |
         */
 

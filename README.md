@@ -47,11 +47,16 @@ use Gridwb\LaravelAdapty\Facades\Adapty;
 
 // Get profile by `customer_user_id`
 $customerUserId = '<string>';
-$profile = Adapty::profile()->getProfile(customerUserId: $customerUserId);
+$response = Adapty::profile()->getProfile(customerUserId: $customerUserId);
 
 // Get profile by `profile_id`
 $profileId = '<string>';
-$profile = Adapty::profile()->getProfile(profileId: $profileId);
+$response = Adapty::profile()->getProfile(profileId: $profileId);
+
+echo $response->appId;
+echo $response->customerUserId;
+echo $response->customerUserId;
+// ...
 ```
 
 #### `delete profile`
