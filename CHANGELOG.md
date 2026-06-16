@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-adapty` will be documented in this file.
 
+## 1.1.3 - 2026-06-16
+
+- added `stripe` resource
+
 ## 1.1.2 - 2025-11-16
 
 - updated usage section in readme
