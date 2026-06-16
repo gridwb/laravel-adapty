@@ -7,6 +7,7 @@ Laravel Adapty is a convenient wrapper for interacting with the Adapty API in La
 - [Installation](#installation)
 - [Usage](#usage)
     - [Profile Resource](#profile-resource)
+    - [Stripe Resource](#stripe-resource)
     - [Webhooks](#webhooks)
 - [Testing](#testing)
 - [Changelog](#changelog)
@@ -75,6 +76,26 @@ Adapty::profile()->deleteProfile(customerUserId: $customerUserId);
 // Delete profile by `profile_id`
 $profileId = '<string>';
 Adapty::profile()->deleteProfile(profileId: $profileId);
+```
+
+### `Stripe` Resource
+
+#### `validate stripe purchase`
+
+Validate stripe purchase request:
+
+```php
+<?php
+
+use Gridwb\LaravelAdapty\Facades\Adapty;
+
+$response = Adapty::stripe()->validateStripePurchase([
+    'type' => 'stripe_receipt_validation_result',
+    'attributes' => [
+        'customer_user_id' => '<string>',
+        'stripe_token' => '<string>',
+    ]
+]);
 ```
 
 ### `Webhooks`
