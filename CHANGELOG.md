@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-adapty` will be documented in this file.
 
+## 1.1.4 - 2026-09-07
+
+- added support guzzlehttp/guzzle 8.0
+
 ## 1.1.3 - 2026-06-16
 
 - added `stripe` resource
