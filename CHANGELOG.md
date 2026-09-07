@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-adapty` will be documented in this file.
 
+## 1.1.5 - 2026-09-07
+
+- added support illuminate/contracts 13.0
+
 ## 1.1.4 - 2026-09-07
 
 - added support guzzlehttp/guzzle 8.0
