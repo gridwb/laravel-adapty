@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-adapty` will be documented in this file.
 
+## 1.1.6 - 2026-11-03
+
+- added event trial active and subscription active for webhook
+
 ## 1.1.5 - 2026-09-07
 
 - added support illuminate/contracts 13.0

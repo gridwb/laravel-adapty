@@ -88,6 +88,7 @@ return [
 
         'events' => [
             'subscription_started' => \Gridwb\LaravelAdapty\Events\SubscriptionStarted::class,
+            'subscription_active' => \Gridwb\LaravelAdapty\Events\SubscriptionActive::class,
             'subscription_renewed' => \Gridwb\LaravelAdapty\Events\SubscriptionRenewed::class,
             'subscription_renewal_cancelled' => \Gridwb\LaravelAdapty\Events\SubscriptionRenewalCancelled::class,
             'subscription_renewal_reactivated' => \Gridwb\LaravelAdapty\Events\SubscriptionRenewalReactivated::class,
@@ -96,6 +97,7 @@ return [
             'subscription_deferred' => \Gridwb\LaravelAdapty\Events\SubscriptionDeferred::class,
             'non_subscription_purchase' => \Gridwb\LaravelAdapty\Events\NonSubscriptionPurchase::class,
             'trial_started' => \Gridwb\LaravelAdapty\Events\TrialStarted::class,
+            'trial_active' => \Gridwb\LaravelAdapty\Events\TrialActive::class,
             'trial_converted' => \Gridwb\LaravelAdapty\Events\TrialConverted::class,
             'trial_renewal_cancelled' => \Gridwb\LaravelAdapty\Events\TrialRenewalCancelled::class,
             'trial_renewal_reactivated' => \Gridwb\LaravelAdapty\Events\TrialRenewalReactivated::class,
