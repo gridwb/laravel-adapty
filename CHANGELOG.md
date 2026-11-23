@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-adapty` will be documented in this file.
 
+## 1.1.7 - 2026-11-23
+
+- fixed Call to undefined method GuzzleHttp\Utils::jsonDecode()
+
 ## 1.1.6 - 2026-11-03
 
 - added event trial active and subscription active for webhook
