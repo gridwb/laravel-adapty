@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-adapty` will be documented in this file.
 
+## 1.1.9 - 2026-11-24
+
+- fixed deprecations
+
 ## 1.1.8 - 2026-11-24
 
 - fixed deprecations
