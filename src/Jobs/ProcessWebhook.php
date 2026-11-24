@@ -29,10 +29,10 @@ class ProcessWebhook implements ShouldQueue
     public function handle(): void
     {
         /** @var string|null $eventType */
-        $eventType = Arr::get($this->payload, 'event_type');
+        $eventType = Arr::get($this->payload, 'event_type', '');
 
         /** @var array<string, class-string<AbstractEvent>> $events */
-        $events = Config::get('adapty.webhook.events');
+        $events = Config::get('adapty.webhook.events', []);
 
         /** @var class-string<AbstractEvent>|null $event */
         $event = $events[$eventType] ?? null;
